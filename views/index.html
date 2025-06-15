@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proses Donasi - DonasiKu</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+</head>
+<body>
+    <div class="app-wrapper">
+        <header class="app-header">
+            <div class="header-content">
+                <h1>DonasiKu</h1>
+                <p class="tagline">Terima kasih atas dukungan Anda</p>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="card payment-card">
+                <div class="card-header">
+                    <h2 class="card-title">Selesaikan Pembayaran Anda</h2>
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                            <line x1="1" y1="10" x2="23" y2="10"></line>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="payment-summary">
+                    <div class="donor-info">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                        <span class="donor-name">John Doe</span>
+                    </div>
+
+                    <div class="amount-display">
+                        <span class="amount-label">Total Pembayaran</span>
+                        <span class="amount-value">Rp 100.000</span>
+                        <span class="fee-note">Termasuk biaya transaksi: Rp 2.000</span>
+                    </div>
+                </div>
+
+                <div class="payment-method">
+                    <h3 class="section-title">Pembayaran via QRIS</h3>
+                    <div class="qr-container">
+                        <img src="https://example.com/qr-code.png" alt="QRIS Code Donasi" class="qr-image" onload="this.style.opacity=1" style="opacity:0; transition: opacity 0.3s ease;">
+                        <p class="scan-instruction">Pindai QR code menggunakan aplikasi mobile banking atau e-wallet</p>
+                    </div>
+
+                    <details class="qr-alternative">
+                        <summary>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                            Alternatif Pembayaran Manual
+                        </summary>
+                        <div class="alternative-content">
+                            <p>Salin kode pembayaran berikut:</p>
+                            <div class="qr-string-container">
+                                <textarea class="qr-string-display" readonly>00020101021126680014ID.CO.QRIS.WWW011893600911000000000002152000000000303UMI51440014ID.CO.QRIS.WWW0215ID102000000000303UMI5204549953033605405100.005802ID5913MERCHANT NAME6007JAKARTA61051014062380108QRIS0001630463F4</textarea>
+                                <button class="copy-btn" data-clipboard-text="00020101021126680014ID.CO.QRIS.WWW011893600911000000000002152000000000303UMI51440014ID.CO.QRIS.WWW0215ID102000000000303UMI5204549953033605405100.005802ID5913MERCHANT NAME6007JAKARTA61051014062380108QRIS0001630463F4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                    Salin
+                                </button>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+
+                <div class="transaction-details">
+                    <h3 class="section-title">Detail Transaksi</h3>
+                    <div class="details-grid">
+                        <div class="detail-item">
+                            <span class="detail-label">ID Referensi</span>
+                            <span class="detail-value">DON-123456789</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Jumlah Donasi</span>
+                            <span class="detail-value">Rp 98.000</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Biaya Transaksi</span>
+                            <span class="detail-value">Rp 2.000</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Pesan</span>
+                            <span class="detail-value">Semoga bermanfaat</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Batas Waktu</span>
+                            <span class="detail-value">
+                                23:59 WIB
+                                (<span class="countdown" data-expiry="2023-12-31T23:59:00"></span>)
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="payment-actions">
+                    <a href="/status/DON-123456789/100000" class="btn btn-secondary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="3"></circle>
+                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                        </svg>
+                        Cek Status Pembayaran
+                    </a>
+                    <div class="action-links">
+                        <a href="/mutations" class="action-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                            Lihat Riwayat
+                        </a>
+                        <a href="/" class="action-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                            Donasi Lagi
+                        </a>
+                    </div>
+                </div>
+
+                <div class="payment-note">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="8" x2="12" y2="12"></line>
+                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
+                    <p>Pastikan untuk memasukkan <strong>ID Referensi: DON-123456789</strong> jika diminta saat pembayaran.</p>
+                </div>
+            </div>
+        </main>
+
+        <footer class="app-footer">
+            <p>© 2023 DonasiKu. Pembayaran diproses melalui QRIS.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Countdown timer
+        function updateCountdown() {
+            const countdownElements = document.querySelectorAll('.countdown');
+            
+            countdownElements.forEach(element => {
+                const expiry = new Date(element.dataset.expiry);
+                const now = new Date();
+                const diff = expiry - now;
+                
+                if (diff <= 0) {
+                    element.textContent = 'Waktu habis';
+                    return;
+                }
+                
+                const hours = Math.floor(diff / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+                
+                element.textContent = `${hours} jam ${minutes} menit ${seconds} detik`;
+            });
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // Copy button functionality
+        document.querySelectorAll('.copy-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const text = this.dataset.clipboardText;
+                navigator.clipboard.writeText(text).then(() => {
+                    const originalText = this.innerHTML;
+                    this.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Tersalin';
+                    setTimeout(() => {
+                        this.innerHTML = originalText;
+                    }, 2000);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
