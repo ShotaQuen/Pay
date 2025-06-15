@@ -19,7 +19,7 @@ const { createDynamicOrkutQris, checkOrkutQrisPaymentStatus, getLatestMutations 
 
 const app = express();
 
-app.set('view engine', 'html');
+app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -55,8 +55,8 @@ app.post('/donate', async (req, res) => {
     const { name, amount, message } = req.body;
     const originalAmountParam = parseFloat(amount);
 
-    if (isNaN(originalAmountParam) || originalAmountParam < 1) {
-        req.flash('error_msg', 'Jumlah donasi minimal IDR 0.');
+    if (isNaN(originalAmountParam) || originalAmountParam < 1000) {
+        req.flash('error_msg', 'Jumlah donasi minimal IDR 1,000.');
         return res.redirect('/');
     }
 
