@@ -55,8 +55,8 @@ app.post('/donate', async (req, res) => {
     const { name, amount, message } = req.body;
     const originalAmountParam = parseFloat(amount);
 
-    if (isNaN(originalAmountParam) || originalAmountParam < 1000) {
-        req.flash('error_msg', 'Jumlah donasi minimal IDR 1,000.');
+    if (isNaN(originalAmountParam) || originalAmountParam < 1) {
+        req.flash('error_msg', 'Jumlah donasi minimal IDR 0.');
         return res.redirect('/');
     }
 
